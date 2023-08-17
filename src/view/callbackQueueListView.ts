@@ -1,4 +1,4 @@
-import { getCallbackQueueList } from "../store/template";
+import { getCallbackQueueList } from "../store/sample";
 
 export default function CallbackQueueListView() {
   const callbackQueueList = getCallbackQueueList();

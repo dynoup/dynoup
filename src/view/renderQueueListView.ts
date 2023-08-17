@@ -1,4 +1,4 @@
-import { getRenderQueueList } from "../store/template";
+import { getRenderQueueList } from "../store/sample";
 
 export default function RenderQueueListView() {
   const renderQueueList = getRenderQueueList();

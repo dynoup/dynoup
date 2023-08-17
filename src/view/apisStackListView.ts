@@ -1,4 +1,4 @@
-import { getApisStackList } from "../store/template";
+import { getApisStackList } from "../store/sample";
 
 export default function ApisStackListView() {
   const apisStackList = getApisStackList();

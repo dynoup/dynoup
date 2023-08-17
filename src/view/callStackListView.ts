@@ -1,4 +1,4 @@
-import { getCallStackList } from "../store/template";
+import { getCallStackList } from "../store/sample";
 
 export default function CallStackListView() {
   const callStackList = getCallStackList();
