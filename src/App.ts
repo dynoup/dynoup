@@ -1,37 +1,26 @@
+import Content from './components/Content';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Component from './packages/core/component';
+import { Components } from './packages/core/component.type';
 
 export default class App extends Component {
-  setComponents() {
+  setComponents(components: Components) {
     return {
+      ...components,
       Header,
       Nav,
-    };
-  }
-
-  setState() {
-    return {
-      count: 0,
-    };
-  }
-
-  setHandler() {
-    return {
-      handleClick: (e: Event) => {
-        console.log('[handleClick]', e.target);
-        // this.state.count++;
-      },
+      Content,
     };
   }
 
   template() {
     return `
-      <div @click=”handleClick”>
-        <component @Header count="{{count}}" state="{{state}}" name="hello">
-          <component @Nav />
-        </component> 
-        {{count}}
+      <div class="app">
+        <Header props="props">
+          <Nav />
+        </Header>
+        <footer>끝</footer>
       </div>
     `;
   }
