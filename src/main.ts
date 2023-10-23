@@ -1,16 +1,10 @@
 import App from './App';
-import InstancePool from './core/InstancePool';
+import ComponentRegistry from './core/ComponentRegistry';
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    Dynoup
-  </div>
-`;
+export const componentRegistry = new ComponentRegistry();
 
-// 최상단에 위치한 인스턴스 컨테이너
-export const instanceContainer = new InstancePool();
+const $root = document.querySelector<HTMLDivElement>('#app');
+const rootComponent = new App();
 
-const root = new App();
-root.key = 'App';
-root.render();
+if ($root) $root.append(...rootComponent.render());
