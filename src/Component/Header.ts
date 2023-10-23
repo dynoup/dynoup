@@ -1,12 +1,13 @@
 import Component from '../core/Component';
 
 export default class Header extends Component {
-  constructor() {
-    super();
-  }
   template() {
-    return `<div>
-    <h1>헤더</h1>
- </div>`;
+    return `
+      <header class="header">
+        <h1>헤더</h1>
+        {{children}}
+        {{state}}
+      </header>
+    `;
   }
 }
